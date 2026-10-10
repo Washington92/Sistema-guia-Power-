@@ -1,0 +1,6 @@
+{
+  "name": "Ficha de Check-List Águia Power",
+  "description": "Ficha de check-list digital do Grupo Águia Power com campos editáveis, fotos, assinatura digital e impressão/PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

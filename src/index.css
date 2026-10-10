@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 6mm;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .ficha {
+    break-inside: avoid;
+    zoom: 0.85;
+  }
+  .ficha textarea {
+    max-height: 16mm;
+  }
+  .ficha canvas,
+  .ficha .sig-area {
+    height: 70px !important;
+  }
+  .verso {
+    break-before: page;
+    break-inside: avoid;
+    max-height: calc(297mm - 12mm);
+    overflow: hidden;
+  }
+  .material-row {
+    height: 11mm;
+  }
+  .fotos {
+    break-before: page;
+  }
+  .foto-print {
+    height: 82mm;
+    break-inside: avoid;
+  }
+  input,
+  textarea {
+    border-color: #000 !important;
+    color: #000 !important;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: transparent !important;
+  }
+}
+
+/* Botões estilo moderno: ícone desliza ao tocar */
+.btn-ui {
+  transition: all 0.2s ease;
+}
+.btn-ui .btn-icon {
+  transition: transform 0.2s ease;
+}
+.btn-ui:hover .btn-icon,
+.btn-ui:active .btn-icon {
+  transform: translateX(3px);
+}
+.btn-ui:active {
+  transform: scale(0.97);
+}
+
+@media print {
+  .status-btn {
+    border-radius: 0 !important;
+    border-width: 0 !important;
+    background: transparent !important;
+    color: #000 !important;
+    padding: 0 !important;
+  }
+  .status-btn .btn-icon {
+    width: 2.5rem;
+    border: 1px solid #000;
+    border-radius: 0;
+  }
+  .pill-input {
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+}

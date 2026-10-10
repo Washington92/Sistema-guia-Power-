@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "Ficha": {
+      "title": "Ficha",
+      "description": "Ficha técnica de atendimento e check-list do Grupo Águia Power",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único da ficha"
+        },
+        "atualizado": {
+          "type": "number",
+          "description": "Timestamp da última atualização"
+        },
+        "local": {
+          "type": "string",
+          "description": "Nome da academia ou unidade atendida"
+        },
+        "dataHora": {
+          "type": "string",
+          "description": "Data e horário formatados do atendimento"
+        },
+        "sigla": {
+          "type": "string",
+          "description": "Sigla da unidade"
+        },
+        "lider": {
+          "type": "string",
+          "description": "Nome do técnico responsável ou líder"
+        },
+        "colaborador": {
+          "type": "string",
+          "description": "Nome do colaborador que acompanhou o serviço"
+        },
+        "marcados": {
+          "type": "object",
+          "description": "Mapeamento dos serviços executados"
+        },
+        "outros": {
+          "type": "boolean",
+          "description": "Se há outros serviços não listados"
+        },
+        "outrosTexto": {
+          "type": "string",
+          "description": "Descrição dos outros serviços executados"
+        },
+        "descricao": {
+          "type": "string",
+          "description": "Detalhamento das atividades realizadas"
+        },
+        "sucesso": {
+          "type": "boolean",
+          "description": "Serviço realizado com sucesso"
+        },
+        "naoRealizado": {
+          "type": "boolean",
+          "description": "Serviço não realizado"
+        },
+        "motivo": {
+          "type": "string",
+          "description": "Motivo do serviço não realizado"
+        },
+        "motivoDetalhe": {
+          "type": "string",
+          "description": "Detalhamento do motivo"
+        },
+        "material": {
+          "type": "string",
+          "description": "Material necessário para concluir"
+        },
+        "materialDetalhe": {
+          "type": "string",
+          "description": "Detalhamento do material necessário"
+        },
+        "assTecnico": {
+          "type": "string",
+          "description": "Assinatura digital do técnico (dataUrl)"
+        },
+        "assColaborador": {
+          "type": "string",
+          "description": "Assinatura digital do colaborador (dataUrl)"
+        },
+        "linhas": {
+          "type": "array",
+          "description": "Lista de materiais usados no verso"
+        },
+        "fotos": {
+          "type": "array",
+          "description": "Fotos registradas no atendimento"
+        },
+        "entrada": {
+          "type": "number",
+          "description": "Timestamp de entrada no local"
+        },
+        "saida": {
+          "type": "number",
+          "description": "Timestamp de saída do local"
+        },
+        "gpsUrl": {
+          "type": "string",
+          "description": "Link do Google Maps com coordenadas do local"
+        }
+      },
+      "required": ["id", "atualizado"]
+    }
+  },
+  "firestore": {
+    "/fichas/{fichaId}": {
+      "schema": "Ficha",
+      "description": "Coleção compartilhada de fichas técnicas para consulta dos técnicos e da liderança"
+    }
+  }
+}
